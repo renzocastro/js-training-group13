@@ -45,7 +45,7 @@ hijos22.forEach(element => {
 // const hijoPera = contenedor.querySelector('.pera');
 // const hijos = contenedor.querySelectorAll('.hijo');
 
-
+/* area51.pe
 const menu1 = document.querySelector('.menu');
 const menu2 = document.querySelectorAll('.menu')[0];
 const menu3 = document.getElementsByClassName('menu')[0];
@@ -59,7 +59,7 @@ const aLinks = Array.prototype.slice.call(links1, 0);
 aLinks.forEach(el => {
   el.style.color = 'red';
 });
-
+*/
 
 /*
 
@@ -93,4 +93,17 @@ const html = nombresLI.join('');
    </div>
 */
 
+// 1
+const demo = document.getElementById('demo');
+demo.innerHTML = '<ul></ul>';
+
+// 2
+const nombres = ['a', 'b', 'c', 'd', 'e'];
+
+// 3
+// const html = nombres.map(t => '<li>' + t + '</li>').join('');
+const html = '<li>' + nombres.join('</li><li>') + '</li>';
+// const ul = demo.getElementsByTagName('ul')[0];
+const ul = demo.querySelector('ul');
+ul.innerHTML = html;
 
