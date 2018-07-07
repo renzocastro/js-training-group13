@@ -107,3 +107,18 @@ const html = '<li>' + nombres.join('</li><li>') + '</li>';
 const ul = demo.querySelector('ul');
 ul.innerHTML = html;
 
+// Tarea
+// ajaxGet(url, data, success, dataType) {
+const ajaxGet = function () {
+  console.log(arguments);
+
+  // return [url, { search: 'pedro', llave: 123456 }, respuesta];
+}
+
+const url = '/api';
+const respuesta = data => {
+
+};
+
+ajaxGet(url, respuesta);
+ajaxGet(url, { search: 'pedro' }, respuesta);
