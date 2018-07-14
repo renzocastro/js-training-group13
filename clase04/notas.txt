@@ -1,0 +1,17 @@
+MouseEvent: mousemove
+
+
+clientX: 34
+clientY: 32
+
+clientX, clientY, pageX, pageY, x, y, layerX, layerY, offsetX, offsetY
+
+
+
+screenX: 233,
+screenY: 121
+
+Events
+https://developer.mozilla.org/en-US/docs/Web/Events
+
+https://bit.ly/2MYQl9Z

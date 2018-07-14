@@ -30,7 +30,7 @@ const onSubmitFormDemo = event => {
 
   let elements;
 
-  elements = document.querySelectorAll('#formDemo input[type=text]');
+  elements = document.querySelectorAll('#formDemo input[type=text][required]');
 
   Array.prototype.forEach.call(elements, element => {
     validaInputText(element);
@@ -72,7 +72,7 @@ const onChangeSexo = event => {
 const init = () => {
   let elements;
 
-  elements = document.querySelectorAll('#formDemo input[type=text]');
+  elements = document.querySelectorAll('#formDemo input[type=text][required]');
 
   Array.prototype.forEach.call(elements, element => {
     element.addEventListener('focus', onFocusNombre);
@@ -90,6 +90,7 @@ const init = () => {
 
 
   formDemo = document.getElementById('formDemo');
+  formDemo.noValidate = true;
   formDemo.addEventListener('submit', onSubmitFormDemo);
 
   const btn = document.getElementById('btnMostrar');
