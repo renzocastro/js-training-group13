@@ -1,5 +1,6 @@
 let txtNombre;
 let formDemo;
+let isValidationReady = false;
 
 const onClickBtn = event => {
   console.log('click:', txtNombre.value);
@@ -8,17 +9,25 @@ const onClickBtn = event => {
 const onSubmitFormDemo = event => {
   console.log('submit', formDemo);
 
+  isValidationReady = true;
+
   event.preventDefault();
 };
 
 const onFocusNombre = event => {
   console.log('focus');
+
   txtNombre.classList.remove('error');
 };
 
 const onBlurNombre = event => {
   console.log('blur');
-  txtNombre.classList.add('error');
+
+  if (isValidationReady) {
+    if (txtNombre.value === '') {
+      txtNombre.classList.add('error');
+    }
+  }
 };
 
 const init = () => {
