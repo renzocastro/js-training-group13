@@ -1,4 +1,5 @@
-input {
+input,
+select {
   outline: none;
 }
 

@@ -13,16 +13,36 @@ const validaInputText = (element) => {
   }
 };
 
+const validaSelect = (element) => {
+  if (estaListaLaValidacion) {
+    if (element.selectedIndex <= 0) {
+      element.classList.add('error');
+    } else {
+      element.classList.remove('error');
+    }
+  }
+};
+
 const onSubmitFormDemo = event => {
   console.log('submit', formDemo);
 
   estaListaLaValidacion = true;
 
-  const elements = document.querySelectorAll('#formDemo input[type=text]');
+  let elements;
+
+  elements = document.querySelectorAll('#formDemo input[type=text]');
 
   Array.prototype.forEach.call(elements, element => {
     validaInputText(element);
   });
+
+
+  elements = document.querySelectorAll('#formDemo select');
+
+  Array.prototype.forEach.call(elements, element => {
+    validaSelect(element);
+  });
+
 
   event.preventDefault();
 };
@@ -43,14 +63,30 @@ const onBlurNombre = event => {
   validaInputText(element);
 };
 
+const onChangeSexo = event => {
+  const element = event.currentTarget;
+
+  validaSelect(element);
+};
+
 const init = () => {
-  const elements = document.querySelectorAll('#formDemo input[type=text]');
+  let elements;
+
+  elements = document.querySelectorAll('#formDemo input[type=text]');
 
   Array.prototype.forEach.call(elements, element => {
     element.addEventListener('focus', onFocusNombre);
     element.addEventListener('blur', onBlurNombre);
   });
 
+  // const selectSexo = document.getElementById('selectSexo');
+  // selectSexo.addEventListener('change', onChangeSexo);
+
+  elements = document.querySelectorAll('#formDemo select');
+
+  Array.prototype.forEach.call(elements, element => {
+    element.addEventListener('change', onChangeSexo);
+  });
 
 
   formDemo = document.getElementById('formDemo');
