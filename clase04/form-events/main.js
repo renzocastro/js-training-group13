@@ -1,15 +1,14 @@
-let txtNombre;
 let formDemo;
 let estaListaLaValidacion = false;
 
 const onClickBtn = event => {
-  console.log('click:', txtNombre.value);
+  console.log('click:');
 };
 
-const validaInputText = () => {
+const validaInputText = (element) => {
   if (estaListaLaValidacion) {
-    if (txtNombre.value === '') {
-      txtNombre.classList.add('error');
+    if (element.value === '') {
+      element.classList.add('error');
     }
   }
 };
@@ -19,7 +18,11 @@ const onSubmitFormDemo = event => {
 
   estaListaLaValidacion = true;
 
-  validaInputText();
+  const elements = document.querySelectorAll('#formDemo input[type=text]');
+
+  Array.prototype.forEach.call(elements, element => {
+    validaInputText(element);
+  });
 
   event.preventDefault();
 };
@@ -27,19 +30,28 @@ const onSubmitFormDemo = event => {
 const onFocusNombre = event => {
   console.log('focus');
 
-  txtNombre.classList.remove('error');
+  const element = event.currentTarget;
+
+  element.classList.remove('error');
 };
 
 const onBlurNombre = event => {
   console.log('blur');
 
-  validaInputText();
+  const element = event.currentTarget;
+
+  validaInputText(element);
 };
 
 const init = () => {
-  txtNombre = document.getElementById('txtNombre');
-  txtNombre.addEventListener('focus', onFocusNombre);
-  txtNombre.addEventListener('blur', onBlurNombre);
+  const elements = document.querySelectorAll('#formDemo input[type=text]');
+
+  Array.prototype.forEach.call(elements, element => {
+    element.addEventListener('focus', onFocusNombre);
+    element.addEventListener('blur', onBlurNombre);
+  });
+
+
 
   formDemo = document.getElementById('formDemo');
   formDemo.addEventListener('submit', onSubmitFormDemo);
