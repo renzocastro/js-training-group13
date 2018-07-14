@@ -1,15 +1,25 @@
 let txtNombre;
 let formDemo;
-let isValidationReady = false;
+let estaListaLaValidacion = false;
 
 const onClickBtn = event => {
   console.log('click:', txtNombre.value);
 };
 
+const validaInputText = () => {
+  if (estaListaLaValidacion) {
+    if (txtNombre.value === '') {
+      txtNombre.classList.add('error');
+    }
+  }
+};
+
 const onSubmitFormDemo = event => {
   console.log('submit', formDemo);
 
-  isValidationReady = true;
+  estaListaLaValidacion = true;
+
+  validaInputText();
 
   event.preventDefault();
 };
@@ -23,11 +33,7 @@ const onFocusNombre = event => {
 const onBlurNombre = event => {
   console.log('blur');
 
-  if (isValidationReady) {
-    if (txtNombre.value === '') {
-      txtNombre.classList.add('error');
-    }
-  }
+  validaInputText();
 };
 
 const init = () => {
