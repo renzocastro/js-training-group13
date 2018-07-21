@@ -1,0 +1,19 @@
+{
+  "name": "esmodules",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode production"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.10"
+  },
+  "devDependencies": {
+    "webpack": "^4.16.1",
+    "webpack-command": "^0.4.1"
+  }
+}
