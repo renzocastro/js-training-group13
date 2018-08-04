@@ -31,17 +31,10 @@
     var lienzo = document.getElementById('lienzo');
 
     function pintar(p) {
-      var el = document.createElement('div');
-      el.className = 'colorPunto';
-
-      el.style.top = p.y + 'px';
-      el.style.left = p.x + 'px';
-      el.style.backgroundColor = p.color;
-
-      lienzo.appendChild(el);
+      lienzo.appendChild(p.el);
     }
 
-    var p1 = new ColorPunto(5, 5, 'red');
+    var p1 = new NodoColorPunto(5, 5, 'red');
     pintar(p1);
 
   </script>

@@ -31,3 +31,16 @@ console.log(miColorPunto.toString());
 console.log(miColorPunto.x);
 console.log(miColorPunto.y);
 console.log(miColorPunto.color);
+
+class NodoColorPunto extends ColorPunto {
+  constructor(x = 0, y = 0, color = "black") {
+    super(x, y, color);
+
+    this.el = document.createElement("div");
+    this.el.className = "colorPunto";
+
+    this.el.style.top = this.y + "px";
+    this.el.style.left = this.x + "px";
+    this.el.style.backgroundColor = this.color;
+  }
+}
