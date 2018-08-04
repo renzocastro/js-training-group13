@@ -42,5 +42,9 @@ class NodoColorPunto extends ColorPunto {
     this.el.style.top = this.y + "px";
     this.el.style.left = this.x + "px";
     this.el.style.backgroundColor = this.color;
+
+    this.el.addEventListener("click", function() {
+      console.log(color);
+    });
   }
 }
