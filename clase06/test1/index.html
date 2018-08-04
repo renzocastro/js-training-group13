@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Demo ColorPunto</title>
+
+  <style>
+    #lienzo {
+      background-color: #ccc;
+      height: 480px;
+      width: 640px;
+      position: relative;
+    }
+
+    .colorPunto {
+      position: absolute;
+      height: 2px;
+      width: 2px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="lienzo"></div>
+
+  <script src="puntos.js"></script>
+  <script>
+    var lienzo = document.getElementById('lienzo');
+
+    function pintar(p) {
+      var el = document.createElement('div');
+      el.className = 'colorPunto';
+
+      el.style.top = p.y + 'px';
+      el.style.left = p.x + 'px';
+      el.style.backgroundColor = p.color;
+
+      lienzo.appendChild(el);
+    }
+
+    var p1 = new ColorPunto(5, 5, 'red');
+    pintar(p1);
+
+  </script>
+</body>
+
+</html>
