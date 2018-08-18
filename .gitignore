@@ -1,3 +1,6 @@
 clase05/esmodules/node_modules
 clase05/esmodules/dist
 clase06/test1/node_modules
+clase07/todolist/node_modules
+clase07/todolist/dist/*
+!clase07/todolist/dist/index.html

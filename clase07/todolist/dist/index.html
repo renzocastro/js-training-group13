@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>TodoList</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="todolist">
+    <div class="todolist__entry">
+      <input type="text" name="task" id="txt-task">
+      <button id="btn-add">Agregar</button>
+    </div>
+    <div class="todolist__list"></div>
+  </div>
+
+  <template id="tpl-todolist-item">
+    <label class="todolist__item" for="chk-{{id}}">
+      <input type="checkbox" name="item-{{id}}" id="chk-item-{{id}}">
+      <span>{{task}}</span>
+    </label>
+  </template>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
