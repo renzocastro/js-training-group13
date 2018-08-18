@@ -1,3 +1,5 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 module.exports = {
   entry: {
     main: './src/scripts/index.js'
@@ -10,5 +12,15 @@ module.exports = {
         use: { loader: 'babel-loader' }
       }
     ]
-  }
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      files: {
+        css: [ 'styles.css' ]
+      },
+      title: 'TodoList',
+      filename: 'index.html',
+      template: './src/index.html'
+    })
+  ]
 };

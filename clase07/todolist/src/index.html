@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>TodoList</title>
+  <title><%= htmlWebpackPlugin.options.title || 'Template'%></title>
 
-  
-    <link href="styles.css" rel="stylesheet">
-  
+  <% for (let css in htmlWebpackPlugin.options.files.css) { %>
+    <link href="<%= htmlWebpackPlugin.options.files.css[css] %>" rel="stylesheet">
+  <% } %>
 </head>
 <body>
 
@@ -30,5 +30,5 @@
       <button class="todolist__item__remove">X</button>
     </div>
   </template>
-<script type="text/javascript" src="main.js"></script></body>
+</body>
 </html>
